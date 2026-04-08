@@ -15,7 +15,7 @@ class StepRequest(BaseModel):
 @app.post("/reset")
 async def reset():
     global env
-    env = await MyEnvV4Env.from_docker_image(IMAGE_NAME)
+    env = await MyEnvV4Env()
     result = await env.reset()
     return {"observation": result.observation.echoed_message}
 
