@@ -1,13 +1,9 @@
 ---
-title: Meta Hackathon RL
-emoji: 🤖
+title: Meta Hackathon
+emoji: 🚀
 colorFrom: blue
-colorTo: purple
+colorTo: green
 sdk: docker
-app_file: inference.py
+app_file: app.py
 pinned: false
 ---
-
-# Meta Hackathon RL Project
-
-This project uses Reinforcement Learning and LLM inference.
