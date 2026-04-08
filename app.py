@@ -4,20 +4,12 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "running"}
+    return {"msg": "ok"}
 
 @app.post("/reset")
 def reset():
-    return {
-        "observation": "start",
-        "reward": 0.0,
-        "done": False
-    }
+    return {"observation": "start", "reward": 0.0, "done": False}
 
 @app.post("/step")
 def step(data: dict):
-    return {
-        "observation": data.get("action", ""),
-        "reward": 1.0,
-        "done": True
-    }
+    return {"observation": "ok", "reward": 1.0, "done": True}
