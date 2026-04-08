@@ -1,19 +1,19 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
 
 app = FastAPI()
 
-class StepRequest(BaseModel):
-    action: str
-
 @app.post("/reset")
 async def reset():
-    return {"status": "ok"}
+    return {
+        "observation": "start",
+        "reward": 0.0,
+        "done": False
+    }
 
 @app.post("/step")
-async def step(req: StepRequest):
+async def step(action: dict):
     return {
-        "observation": req.action,
+        "observation": action.get("action", ""),
         "reward": 1.0,
         "done": True
     }
